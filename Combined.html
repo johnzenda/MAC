@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+ <body>
+     <h1 style="font-family: Verdana; font-style: italic">Welcome Maxum Employee</h1>
+     <hr><br></br>
+    <form action="" method="post">
+   Enter Employee Number:<input type="text" name="number">
+        <button name="Submit1" onclick="getSelection('post')">Submit</button>
+   <!--<input type="submit" name="Search">
+ </form>
+ <br>-->
+ <!--<div style=" font-family: Verdana; font-size: larger; font-weight: 900" id="txtHint"><b>Accrual time will be listed here.</b></div>-->
+     <?php
+ $con=mysqli_connect("localhost","root","super99","simplecms481");
+ // Check connection
+ if (mysqli_connect_errno())
+   {
+   echo "Failed to connect to MySQL: " . mysqli_connect_error();
+   }
+
+ $sql="SELECT * FROM employeedata WHERE eenumber = '$_POST[number]'";
+
+if (isset($_POST['Submit1'])){
+ echo "<table border='1'>
+ <th>Firstname</th>
+ <th>Lastname</th>
+ <th>Employee#</th>
+ <th>Vacation Time</th>
+ <th>Sick Time</th>
+ </tr>";
+}
+ while($row = mysqli_fetch_array($result))
+  {
+   echo "Welcome " . $row['firstname'] . " !";
+   echo "<br></br>";
+   echo "<tr>";
+   echo "<td>" . $row['firstname'] . "</td>";
+   echo "<td>" . $row['lastname'] . "</td>";
+   echo "<td>" . $row['eenumber'] . "</td>";
+   echo "<td>" . $row['vacation'] . "</td>";
+   echo "<td>" . $row['sick'] . "</td>";
+   echo "</tr>";
+   }
+ echo "</table>";
+ echo "<br></br>";
+ echo "<p></p>";
+ mysqli_close($con);
+ ?> 
+
+ </body>
+</html>

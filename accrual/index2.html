@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+ <head>
+ <script>
+ function showUser(str)
+ {
+ if (str=="")
+   {
+   document.getElementById("txtHint").innerHTML="";
+   return;
+   } 
+ if (window.XMLHttpRequest)
+   {// code for IE7+, Firefox, Chrome, Opera, Safari
+   xmlhttp=new XMLHttpRequest();
+   }
+ else
+   {// code for IE6, IE5
+   xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+   }
+ xmlhttp.onreadystatechange=function()
+   {
+   if (xmlhttp.readyState==4 && xmlhttp.status==200)
+     {
+     document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+     }
+   }
+ xmlhttp.open("GET","getuser.php?q="+str,true);
+ xmlhttp.send();
+ }
+ </script>
+ </head>
+ <body>
+     <h1 style="font-family: Verdana; font-style: italic">Welcome Maxum Employee</h1>
+     <hr><br></br>
+ <form style="font-size: x-large";font-family:verdana;color:red">
+ Enter Employee Number:<input style="font-size: medium" value="" name="users" onchange="showUser(this.value)">
+     <br></br>
+
+     <table style="background-color: #0094ff; font-size: medium; border: 1px outset black"><tr><td style="font-family: Verdana; color: #fff">Find Me</td></tr></table>
+     <!--<button>Find Me</button>-->
+ <!--<input type="submit" name="Search">-->
+ </form>
+ <br>
+ <div style=" font-family: Verdana; font-size: larger; font-weight: 900" id="txtHint"><b>Accrual time will be listed here.</b></div>
+
+ </body>
+ </html> 
