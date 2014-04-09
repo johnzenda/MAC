@@ -27,8 +27,9 @@ include("Includes/header.php");
     font-family: Segoe UI, Verdana, Helvetica, Sans-Serif;
     height: 100%;">
         <br></br>
-        <h1 style="font-family: Verdana; color: #0094ff; font-style: italic">Welcome Maxum Employee</h1>
-     <hr><br></br>
+        <h1 style="font-family: Verdana; color: #0094ff; font-style: italic">Welcome Maxum Employee</h1> <hr>
+        <div><iframe src="wdCalendar/sample.php" width="45%" height="700px" id="frame" seamless></iframe></div>
+    <br></br>
           <form style="font-size: x-large";font-family:verdana;color:red" action="Combined.php" method="post">
    Enter Employee Number:<input style="font-size: medium" type="text" name="number">
         <button  name ="Submit1" onclick="getSelection('post')">Find Me</button>
@@ -75,21 +76,32 @@ if (isset($_POST['Submit1']))
    echo "<tr>";
    echo "<td class=\"red\">" . $row['vacation'] . "</td>";
    echo "<td class=\"green\">" . $row['sick'] . "</td>";
-   echo "</tr>"; 
-      echo "<br></br>";
+   echo "</tr>";
+   echo "<br></br>";
    }
  echo "</table>";
+ {
+     echo "<table class=\"thfloat\">
+     <tr>
+     <th class=\"red\"></th>
+     <th class=\"red\"></th>
+     </tr>";
+ }
+ {
+     echo "<tr>";
+     echo "<td id=\"main\"><ol class=\"round\"><li class=\"asterisk\">" ." Values depicted represent total hours on record. For additional infomation please contact HR directly at 310-356-2777. " . "</li></ol></td>";
+     echo "</tr>";   
+ }
+ {
+     echo "</table>";
+ }
 }
-echo "<br></br>";
-echo "<br></br>";
-echo "<br></br>";
-echo "<br></br>";
-echo "<div id=\"main\"><ol class=\"round\"><li class=\"asterisk\"><div>Values depicted represent total hours on record. For additional infomation please contact HR directly at 310-356-2777.</div></li><ol></div>";
 }
-
  mysqli_close($con);
  ?> 
-<!DOCTYPE html>
+    <!--<div id="main"><ol class="round"><li class="asterisk"><div>Values depicted represent total hours on record. For additional infomation please contact HR directly at 310-356-2777.</div></li></ol></div>-->
+        
+         <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />

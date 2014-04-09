@@ -14,7 +14,7 @@
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title"><a href="/index.php">Maxum Petroleum Accrual Checker (M.A.C.)</a></p>
+                    <p class="site-title"><a href="/index.php">Maxum Accrual Checker & Corporate Calendar (M.A.C.C.)</a></p>
                 </div>
                 <div class="float-right">
                     <section id="login">
@@ -26,7 +26,7 @@
                             if (is_admin())
                             {
                                 echo '<li><a href="/adduser.php">Add</a></li>' . "\n";
-                                echo '<li><a href="/updateuser.php">Edit</a></li>' . "\n";
+                                echo '<li><a href="/updateuserone.php">Edit</a></li>' . "\n";
                                 //echo '<li><a href="/deletepage.php">Delete</a></li>' . "\n";
                             }
                         }
@@ -50,6 +50,7 @@
                     <nav>
                         <ul id="menu">
                             <li><a href="/index.php">Home</a></li>
+                            <li><a href="/calendar.php">Calendar</a></li>
                             <?php
                                 $statement = $databaseConnection->prepare("SELECT id, menulabel FROM pages");
                                 $statement->execute();

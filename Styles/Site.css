@@ -107,6 +107,7 @@ h5, h6 {
     min-height: 100%;
     margin-left: 30px;
     max-width: 600px;
+    
 }
 
     .main-content {
@@ -266,7 +267,11 @@ ul#menu {
 }
 .thfloat{
    background-color: #efeeef;
-   float: left;
+   //float: left;
+}
+#frame{
+    float: right;
+    margin-right: 2%;
 }
 
 /* Navigation */
