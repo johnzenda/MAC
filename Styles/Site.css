@@ -272,6 +272,17 @@ ul#menu {
 #frame{
     float: right;
     margin-right: 2%;
+    float: multicol;
+}
+.jz {
+    float: right;
+    margin-right: 2%;
+   
+   
+}
+#textb{
+   padding-left: 10em;
+  
 }
 
 /* Navigation */
@@ -342,6 +353,11 @@ ol.round {
         ol.round li.asterisk {
             background: url("../Images/asterisk.png") no-repeat;
         }
+
+        ol.round li.check {
+            background: url("../Images/check2.png") no-repeat;
+        }
+ 
  
 
 /* content */
