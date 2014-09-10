@@ -160,23 +160,14 @@ include("Includes/header.php");
         </form>
 
         <p id="usersignature"></p>
-       <!-- <script>
+        <script>
 function popfunction()
-{
-var x;
 
-var person=prompt("Please type your name again. This will be treated as your signature","");
-
-if (person!=null)
-  {
-  x="Thank you " + person + "! Your nomination has been submitted!";
-  document.getElementById("usersignature").innerHTML=x;
-  }
 {
-alert("Your Nomination has been submitted.");
+alert("Your Referral has been submitted!");
 }
-}
-</script>-->
+
+</script>
 
   <?php 
 
@@ -185,7 +176,7 @@ alert("Your Nomination has been submitted.");
     
     $email_from = 'referral@pilotlogistics.com';
 
-    $email_to = "john.zendejas@pilotlogistics.com";
+    $email_to = "rosie.gomez@pilotlogistics.com";
  
     $email_subject = "Employee Referral Submission";
 
@@ -222,7 +213,7 @@ alert("Your Nomination has been submitted.");
     $subject = $email_subject;
     
     // send mail
-    mail("john.zendejas@pilotlogistics.com",$subject,$email_message,$from);
+    mail("rosie.gomez@pilotlogistics.com",$subject,$email_message,$from);
     echo "Thank you! Your submission has been sent";
     }
   

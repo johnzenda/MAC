@@ -52,6 +52,7 @@
                             <li><a href="/index.php">Home</a></li>
                             <li><a href="/calendar.php">Calendar</a></li>
                             <li><a href="/eemonth.php">Employee OTM</a></li>
+                            <li><a href="/referral.php">Employee Referral</a></li>
                             <?php
                                 $statement = $databaseConnection->prepare("SELECT id, menulabel FROM pages");
                                 $statement->execute();
